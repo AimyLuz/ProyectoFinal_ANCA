@@ -71,21 +71,49 @@ function nombrarMascota() {
         const nombreMascota = document.getElementById("respuestaNombre");
         nombreMascota.textContent = miMascota.nombre;
         nombreMascota.style.display = "block";
-
-        const mensajeBienvenida = `¡Bienvenidx! Ahora tenés una mascota que se llama ${miMascota.nombre}. Cuídala dándole comida y amor.`;
+        sonido = new Audio('./audios/dia.mp3');
+            sonido.play();
+        const mensajeBienvenida = `¡Bienvenidx! Ahora tenés una mascota que se llama ${miMascota.nombre}. Cuídala dándole comida y amor. Para ello deberás responder diversas preguntas. No te tardes porque cada día que crece pierde salud y energía `;
         cambiarTextoCard(mensajeBienvenida);
 
         guardarProgreso();
     }
 }
 //funciones de jugabilidad
+function ajustarAnchoImagen() {
+    const anchoAdicional = miMascota.edad * 25; // Cada año + 25px
+    imgMascota.style.width = `${200 + anchoAdicional}px`; 
+}
 function incrementarDiaVida() {
     if (mascotaViva()) {
         miMascota.edad += 1;
+        miMascota.energia -= 10;
+        miMascota.salud -= 10;
+        sonido = new Audio('./audios/gluglu.mp3');
+            sonido.play();
         actualizarInfoEnPantalla();
+        ajustarAnchoImagen();
+        if (miMascota.salud <= 0 || miMascota.energia <= 0) {
+            sonido = new Audio('./audios/rip.mp3');
+            sonido.play();
+            Swal.fire({
+                icon: 'error',
+                title: '¡Tu mascota ha muerto! ✝',
+                text: `Tu mascota se ha quedado sin energía y/o salud.`,
+                footer: '<a href="https://www.youtube.com/watch?v=-NVHn19CnDY">INSTRUCTIVO PARA CUIDAR MASCOTAS</a>',
+                confirmButtonText: 'Volver a intentarlo',
+                allowOutsideClick: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.reload();
+                }
+            });
+            localStorage.clear();
+            return;
+        }
     }
 }
-setInterval(incrementarDiaVida, 10000); // 10 seg
+setInterval(incrementarDiaVida, 50000); // 50 seg
 
 
 function cambiarDiaNoche() {
@@ -101,6 +129,7 @@ function cambiarDiaNoche() {
         fondosRosas.forEach(elemento => {
             elemento.style.backgroundColor = 'rgb(229, 127, 255)';
         });
+        document.body.style.backgroundColor = '#7DB645';
 
     } else {
         imgMascota.src = "./img/gato-noche.png"
@@ -109,11 +138,12 @@ function cambiarDiaNoche() {
             elemento.style.color = 'white';
         });
         opcionesFondo.forEach(elemento => {
-            elemento.style.backgroundColor = "midnightblue";
+            elemento.style.backgroundColor = "midnightblue"; 
         });
         fondosRosas.forEach(elemento => {
             elemento.style.backgroundColor = 'indigo';
         });
+        document.body.style.backgroundColor = 'darkslateblue';
 
     }
 }
@@ -323,7 +353,7 @@ const deNoche = [
     }
 
 ];
-
+//array de preguntas
 const preguntas = [
     {
         pregunta: "¿Cuál es el río más largo del mundo?",
@@ -338,32 +368,32 @@ const preguntas = [
         respuesta: "jupiter"
     },
     {
-        pregunta: "¿Cómo se llama la famosa fábrica de juguetes de Santa Claus?",
+        pregunta: "¿Dónde vive Santa Claus?",
         respuesta: "polo norte"
     },
     {
-        pregunta: "¿En qué año llegó el hombre a la luna por primera vez?",
-        respuesta: "1969"
+        pregunta: "¿Cuánto es 200 + 200?",
+        respuesta: "400"
     },
     {
         pregunta: "¿Cuál es el animal más grande del mundo?",
         respuesta: "ballena azul"
     },
     {
-        pregunta: "¿Quién escribió 'Don Quijote de la Mancha'?",
-        respuesta: "miguel cervantes"
+        pregunta: "¿Cómo se llama el hijo más grande de Lionel Messi?",
+        respuesta: "thiago"
     },
     {
-        pregunta: "¿Qué famosa estatua se encuentra en la isla de la Libertad en Nueva York?",
-        respuesta: "estatua de la libertad"
+        pregunta: "Completá el refrán: 'Al mal tiempo..'",
+        respuesta: "buena cara"
     },
     {
         pregunta: "¿Cuál es la capital de Japón?",
         respuesta: "tokio"
     },
     {
-        pregunta: "¿En qué año comenzó la Segunda Guerra Mundial?",
-        respuesta: "1939"
+        pregunta: "Completá el refrán: 'Más vale pajaro en mano...'",
+        respuesta: "que cien volando"
     },
     {
         pregunta: "¿Cuántas patas tiene un gato?",
@@ -374,8 +404,8 @@ const preguntas = [
         respuesta: "2"
     },
     {
-        pregunta: "¿Cómo se llama el animal que vive en el agua, tiene aletas y es famoso por su dorsal?",
-        respuesta: "delfin"
+        pregunta: "Completá el refrán: 'A caballo regalado...'",
+        respuesta: "no se le miran los dientes"
     },
     {
         pregunta: "¿Cuántas letras tiene el abecedario?",
@@ -427,8 +457,8 @@ const preguntas = [
         respuesta: "1816"
     },
     {
-        pregunta: "¿Qué montaña se encuentra en la frontera entre Argentina y Chile y es la más alta de América?",
-        respuesta: "aconcagua"
+        pregunta: "Completá el refrán: 'En casa de herrero...'",
+        respuesta: "cuchillo de palo"
     },
     {
         pregunta: "¿Cómo se llama el famoso estadio de fútbol ubicado en Buenos Aires?",
@@ -445,8 +475,49 @@ const preguntas = [
     {
         pregunta: "¿Cuantas copas tiene Argentina? (escribí el número)",
         respuesta: "3"
-    }
+    },
     //30 preguntas
+    {
+        pregunta: "¿Cuánto es 5 + 3?",
+        respuesta: "8"
+    },
+    {
+        pregunta: "Si tienes 10 caramelos y comes 2, ¿cuántos te quedan?",
+        respuesta: "8"
+    },
+    {
+        pregunta: "Si un gato tiene 4 patas y tienes 3 gatos, ¿cuántas patas en total hay?",
+        respuesta: "12"
+    },
+    {
+        pregunta: "Si un libro tiene 20 páginas y ya has leído 7, ¿cuántas páginas te quedan por leer?",
+        respuesta: "13"
+    },
+    {
+        pregunta: "Si compras un juguete que cuesta 15 dólares y das 20 dólares, ¿cuánto cambio recibirás?",
+        respuesta: "5"
+    },
+    {
+        pregunta: "Si hay 24 chocolates en una caja y los repartes entre 4 amigos, ¿cuántos chocolates recibe cada uno?",
+        respuesta: "6"
+    },
+    {
+        pregunta: "Si un triángulo tiene 3 lados y un cuadrado tiene 4 lados, ¿cuántos lados tienen en total?",
+        respuesta: "7"
+    },
+    {
+        pregunta: "Si sumas 15 + 10, ¿cuánto obtienes?",
+        respuesta: "25"
+    },
+    {
+        pregunta: "Si tienes 20 canicas y decides guardar 9 en una caja, ¿cuántas canicas te quedan afuera?",
+        respuesta: "11"
+    },
+    {
+        pregunta: "Si el día tiene 24 horas y ahora son las 3 de la tarde, ¿cuántas horas faltan para la medianoche?",
+        respuesta: "9"
+    }
+    //40 preguntas
 ];
 
 
@@ -456,7 +527,7 @@ function actualizarInfoEnPantalla() {
     const infoEdad = document.getElementById("infoEdad");
     infoSalud.textContent = "Salud = " + miMascota.salud;
     infoEnergia.textContent = "Energía = " + miMascota.energia;
-    infoEdad.textContent = "Edad = " + miMascota.edad;
+    infoEdad.textContent = "Días de vida = " + miMascota.edad;
     guardarProgreso();
 
 }
@@ -464,6 +535,7 @@ function actualizarInfoEnPantalla() {
 function darComida(opcionComida) {
     const azar = Math.floor(Math.random() * preguntas.length)
     Swal.fire({
+        icon: 'question',
         title: 'Responder la pregunta',
         html: `${preguntas[azar].pregunta}`,
         input: 'text',
@@ -517,6 +589,7 @@ function darComida(opcionComida) {
 function darAmor(opcionAmor) {
     const azar = Math.floor(Math.random() * preguntas.length)
     Swal.fire({
+        icon: 'question',
         title: 'Responder la pregunta',
         html: `${preguntas[azar].pregunta}`,
         input: 'text',
@@ -562,7 +635,7 @@ function darAmor(opcionAmor) {
         }
     }
 } else {
-    Swal.fire('Respuesta incorrecta', 'Inténtalo de nuevo', 'error');
+    Swal.fire('Respuesta incorrecta', `La respusta correcta era: ${preguntas[azar].respuesta}`, 'error');
 }
 }
 });

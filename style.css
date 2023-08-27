@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap');
 
 body {
     background-image: url('./img/fondo-dia2.jpg');
@@ -18,16 +19,22 @@ h1 {
     margin: 0;
 }
 
-
-img {
-    border-radius: 68px;
-    width: 40%;
+.img {
+    margin: 5px;
+    padding: 0;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+   
+}
+#img_mascota {
+    width: 200px;
     margin: 0 10px 0 10px;
 }
 p{
     font-size: 2rem;
-
 }
+
 
 .opciones {
     font-size: 2rem;
@@ -49,7 +56,7 @@ p{
 .section_centro {
     display: grid; 
     grid-template-columns: 1fr 1fr 0.6fr 0.6fr; 
-    grid-template-rows: 0.3fr 0.5fr 0.5fr; 
+    grid-template-rows: 1fr 1fr 1.4fr; 
     gap: 10px 5px; 
     grid-template-areas: 
       "card card comidas amor"
@@ -83,6 +90,9 @@ h2 {
     padding: 10px;
     align-items: center;
     justify-content: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: italic; 
+    font-size: 1.8rem;
 }
 .section2 {
     display: flex;
@@ -168,11 +178,7 @@ footer div p {
     padding:  0 10px 10px 10px;
     margin: 0 10px 10px 10px;
 }
-img {
-    border-radius: 68px;
-    width: 70%;
-    margin: 10px;
-}
+
 .comidas { 
     grid-area: comidas; 
     margin: 10px;
@@ -181,11 +187,7 @@ img {
     margin: 10px;
     
 }
-.img {
-    margin: 0;
-    padding: 0;
-    
-}
+
 .info {
     flex-direction: column;
     font-weight: 700;
