@@ -371,7 +371,7 @@ cargarPreguntasDesdeJSON().then((data) => {
 });
 
 //DAR COMIDA A LA MASCOTA
-async function darComida(opcionComida) {
+function darComida(opcionComida) {
     const azar = Math.floor(Math.random() * preguntas.length);
     Swal.fire({
         icon: "question",
@@ -430,7 +430,7 @@ async function darComida(opcionComida) {
     });
 }
 //DAR AMOR A LA MASCOTA
-async function darAmor(opcionAmor) {
+function darAmor(opcionAmor) {
     const azar = Math.floor(Math.random() * preguntas.length);
     Swal.fire({
         icon: "question",
