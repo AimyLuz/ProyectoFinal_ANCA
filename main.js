@@ -324,7 +324,130 @@ const deNoche = [
 
 ];
 
-
+const preguntas = [
+    {
+        pregunta: "¿Cuál es el río más largo del mundo?",
+        respuesta: "nilo"
+    },
+    {
+        pregunta: "¿En qué continente se encuentra la Torre Eiffel?",
+        respuesta: "europa"
+    },
+    {
+        pregunta: "¿Cuál es el planeta más grande del sistema solar?",
+        respuesta: "jupiter"
+    },
+    {
+        pregunta: "¿Cómo se llama la famosa fábrica de juguetes de Santa Claus?",
+        respuesta: "polo norte"
+    },
+    {
+        pregunta: "¿En qué año llegó el hombre a la luna por primera vez?",
+        respuesta: "1969"
+    },
+    {
+        pregunta: "¿Cuál es el animal más grande del mundo?",
+        respuesta: "ballena azul"
+    },
+    {
+        pregunta: "¿Quién escribió 'Don Quijote de la Mancha'?",
+        respuesta: "miguel cervantes"
+    },
+    {
+        pregunta: "¿Qué famosa estatua se encuentra en la isla de la Libertad en Nueva York?",
+        respuesta: "estatua de la libertad"
+    },
+    {
+        pregunta: "¿Cuál es la capital de Japón?",
+        respuesta: "tokio"
+    },
+    {
+        pregunta: "¿En qué año comenzó la Segunda Guerra Mundial?",
+        respuesta: "1939"
+    },
+    {
+        pregunta: "¿Cuántas patas tiene un gato?",
+        respuesta: "4"
+    },
+    {
+        pregunta: "Si tienes 3 manzanas y das 1 a tu amigo, ¿cuántas manzanas te quedan?",
+        respuesta: "2"
+    },
+    {
+        pregunta: "¿Cómo se llama el animal que vive en el agua, tiene aletas y es famoso por su dorsal?",
+        respuesta: "delfin"
+    },
+    {
+        pregunta: "¿Cuántas letras tiene el abecedario?",
+        respuesta: "27"
+    },
+    {
+        pregunta: "Si sumas 5 y 3, ¿cuánto es?",
+        respuesta: "8"
+    },
+    {
+        pregunta: "¿Qué animal puede volar y hace 'cuac cuac'?",
+        respuesta: "pato"
+    },
+    {
+        pregunta: "Si tienes 2 ojos y cierras uno, ¿cuántos ojos sigues teniendo abierto?",
+        respuesta: "1"
+    },
+    {
+        pregunta: "¿Cómo se llama la temporada en la que cae nieve y los niños hacen muñecos?",
+        respuesta: "invierno"
+    },
+    {
+        pregunta: "Si tienes 10 caramelos y le das 2 a tu hermano, ¿cuántos caramelos te quedan?",
+        respuesta: "8"
+    },
+    {
+        pregunta: "¿Cuál es el color del sol?",
+        respuesta: "amarillo"
+    },
+    // 20 preguntas arriba, posiciones 0 a 19--------
+    {
+        pregunta: "¿En qué continente se encuentra Argentina?",
+        respuesta: "america"
+    },
+    {
+        pregunta: "¿Cuál es la capital de Argentina?",
+        respuesta: "buenos aires"
+    },
+    {
+        pregunta: "¿Qué famosa conductora argentina es conocida como 'La chiqui'?",
+        respuesta: "Mirtha Legrand"
+    },
+    {
+        pregunta: "¿Cuál es el baile tradicional de Argentina?",
+        respuesta: "tango"
+    },
+    {
+        pregunta: "¿En qué año se declaró la independencia de Argentina?",
+        respuesta: "1816"
+    },
+    {
+        pregunta: "¿Qué montaña se encuentra en la frontera entre Argentina y Chile y es la más alta de América?",
+        respuesta: "aconcagua"
+    },
+    {
+        pregunta: "¿Cómo se llama el famoso estadio de fútbol ubicado en Buenos Aires?",
+        respuesta: "bombonera"
+    },
+    {
+        pregunta: "¿Qué famoso glaciar se encuentra en la provincia de Santa Cruz?",
+        respuesta: "perito moreno"
+    },
+    {
+        pregunta: "¿Quién fue una líder política argentina muy importante y esposa de Juan Domingo Perón?",
+        respuesta: "eva peron"
+    },
+    {
+        pregunta: "¿Cuantas copas tiene Argentina? (escribí el número)",
+        respuesta: "3"
+    }
+    //30 preguntas
+];
 
 
 function actualizarInfoEnPantalla() {
@@ -339,6 +462,18 @@ function actualizarInfoEnPantalla() {
 }
 
 function darComida(opcionComida) {
+    const azar = Math.floor(Math.random() * preguntas.length)
+    Swal.fire({
+        title: 'Responder la pregunta',
+        html: `${preguntas[azar].pregunta}`,
+        input: 'text',
+        showCancelButton: true,
+        confirmButtonText: 'Enviar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const respuesta = result.value.toLowerCase();
+            if (respuesta === `${preguntas[azar].respuesta}`) {
     const comidaElegida = comidas.find(darComida => darComida.nombre === opcionComida);
     if (comidaElegida) {
         miMascota.salud += comidaElegida.efecto.salud;
@@ -373,8 +508,25 @@ function darComida(opcionComida) {
             cambiarDiaNoche();
         }
     }
+} else {
+    Swal.fire('Respuesta incorrecta', `La respusta correcta era: ${preguntas[azar].respuesta}`, 'error');
+}
+}
+});
 }
 function darAmor(opcionAmor) {
+    const azar = Math.floor(Math.random() * preguntas.length)
+    Swal.fire({
+        title: 'Responder la pregunta',
+        html: `${preguntas[azar].pregunta}`,
+        input: 'text',
+        showCancelButton: true,
+        confirmButtonText: 'Enviar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const respuesta = result.value.toLowerCase();
+            if (respuesta === `${preguntas[azar].respuesta}`) {
     const amorElegido = formasDeAmor.find(darAmor => darAmor.nombre === opcionAmor);
     if (amorElegido) {
         miMascota.salud += amorElegido.efecto.salud;
@@ -409,6 +561,11 @@ function darAmor(opcionAmor) {
             cambiarDiaNoche();
         }
     }
+} else {
+    Swal.fire('Respuesta incorrecta', 'Inténtalo de nuevo', 'error');
+}
+}
+});
 }
 function dormir() {
 
