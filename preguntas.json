@@ -1,0 +1,162 @@
+[
+    {
+        "pregunta": "¿Cuál es el río más largo del mundo?",
+        "respuesta": "nilo"
+    },
+    {
+        "pregunta": "¿En qué continente se encuentra la Torre Eiffel?",
+        "respuesta": "europa"
+    },
+    {
+        "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+        "respuesta": "jupiter"
+    },
+    {
+        "pregunta": "¿Dónde vive Santa Claus?",
+        "respuesta": "polo norte"
+    },
+    {
+        "pregunta": "¿Cuánto es 200 + 200?",
+        "respuesta": "400"
+    },
+    {
+        "pregunta": "¿Cuál es el animal más grande del mundo?",
+        "respuesta": "ballena azul"
+    },
+    {
+        "pregunta": "¿Cómo se llama el hijo más grande de Lionel Messi?",
+        "respuesta": "thiago"
+    },
+    {
+        "pregunta": "Completá el refrán: 'Al mal tiempo..'",
+        "respuesta": "buena cara"
+    },
+    {
+        "pregunta": "¿Cuál es la capital de Japón?",
+        "respuesta": "tokio"
+    },
+    {
+        "pregunta": "Completá el refrán: 'Más vale pajaro en mano...'",
+        "respuesta": "que cien volando"
+    },
+    {
+        "pregunta": "¿Cuántas patas tiene un gato?",
+        "respuesta": "4"
+    },
+    {
+        "pregunta": "Si tienes 3 manzanas y das 1 a tu amigo, ¿cuántas manzanas te quedan?",
+        "respuesta": "2"
+    },
+    {
+        "pregunta": "Completá el refrán: 'A caballo regalado...'",
+        "respuesta": "no se le miran los dientes"
+    },
+    {
+        "pregunta": "¿Cuántas letras tiene el abecedario?",
+        "respuesta": "27"
+    },
+    {
+        "pregunta": "Si sumas 5 y 3, ¿cuánto es?",
+        "respuesta": "8"
+    },
+    {
+        "pregunta": "¿Qué animal puede volar y hace 'cuac cuac'?",
+        "respuesta": "pato"
+    },
+    {
+        "pregunta": "Si tienes 2 ojos y cierras uno, ¿cuántos ojos sigues teniendo abierto?",
+        "respuesta": "1"
+    },
+    {
+        "pregunta": "¿Cómo se llama la temporada en la que cae nieve y los niños hacen muñecos?",
+        "respuesta": "invierno"
+    },
+    {
+        "pregunta": "Si tienes 10 caramelos y le das 2 a tu hermano, ¿cuántos caramelos te quedan?",
+        "respuesta": "8"
+    },
+    {
+        "pregunta": "¿Cuál es el color del sol?",
+        "respuesta": "amarillo"
+    },
+    {
+        "pregunta": "¿En qué continente se encuentra Argentina?",
+        "respuesta": "america"
+    },
+    {
+        "pregunta": "¿Cuál es la capital de Argentina?",
+        "respuesta": "buenos aires"
+    },
+    {
+        "pregunta": "¿Qué famosa conductora argentina es conocida como 'La chiqui'?",
+        "respuesta": "Mirtha Legrand"
+    },
+    {
+        "pregunta": "¿Cuál es el baile tradicional de Argentina?",
+        "respuesta": "tango"
+    },
+    {
+        "pregunta": "¿En qué año se declaró la independencia de Argentina?",
+        "respuesta": "1816"
+    },
+    {
+        "pregunta": "Completá el refrán: 'En casa de herrero...'",
+        "respuesta": "cuchillo de palo"
+    },
+    {
+        "pregunta": "¿Cómo se llama el famoso estadio de fútbol ubicado en Buenos Aires?",
+        "respuesta": "bombonera"
+    },
+    {
+        "pregunta": "¿Qué famoso glaciar se encuentra en la provincia de Santa Cruz?",
+        "respuesta": "perito moreno"
+    },
+    {
+        "pregunta": "¿Quién fue una líder política argentina muy importante y esposa de Juan Domingo Perón?",
+        "respuesta": "eva peron"
+    },
+    {
+        "pregunta": "¿Cuantas copas tiene Argentina? (escribí el número)",
+        "respuesta": "3"
+    },
+    {
+        "pregunta": "¿Cuánto es 5 + 3?",
+        "respuesta": "8"
+    },
+    {
+        "pregunta": "Si tienes 10 caramelos y comes 2, ¿cuántos te quedan?",
+        "respuesta": "8"
+    },
+    {
+        "pregunta": "Si un gato tiene 4 patas y tienes 3 gatos, ¿cuántas patas en total hay?",
+        "respuesta": "12"
+    },
+    {
+        "pregunta": "Si un libro tiene 20 páginas y ya has leído 7, ¿cuántas páginas te quedan por leer?",
+        "respuesta": "13"
+    },
+    {
+        "pregunta": "Si compras un juguete que cuesta 15 dólares y das 20 dólares, ¿cuánto cambio recibirás?",
+        "respuesta": "5"
+    },
+    {
+        "pregunta": "Si hay 24 chocolates en una caja y los repartes entre 4 amigos, ¿cuántos chocolates recibe cada uno?",
+        "respuesta": "6"
+    },
+    {
+        "pregunta": "Si un triángulo tiene 3 lados y un cuadrado tiene 4 lados, ¿cuántos lados tienen en total?",
+        "respuesta": "7"
+    },
+    {
+        "pregunta": "Si sumas 15 + 10, ¿cuánto obtienes?",
+        "respuesta": "25"
+    },
+    {
+        "pregunta": "Si tienes 20 canicas y decides guardar 9 en una caja, ¿cuántas canicas te quedan afuera?",
+        "respuesta": "11"
+    },
+    {
+        "pregunta": "Si el día tiene 24 horas y ahora son las 3 de la tarde, ¿cuántas horas faltan para la medianoche?",
+        "respuesta": "9"
+    }
+]
