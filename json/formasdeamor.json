@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "abrazo",
+        "efecto": {
+            "salud": 20,
+            "energia": 5
+        },
+        "mensaje": "Le diste un abrazo a tu mascota. Tu mascota es muy feliz y no sólo aumenta su salud +20, sino también, su energía +5."
+    },
+    {
+        "nombre": "leerle un cuento",
+        "efecto": {
+            "salud": -20,
+            "energia": -10
+        },
+        "mensaje": "Le leíste un cuento a tu mascota. Tu mascota no te escuchó, tu mascota se puso a jugar y se golpeó la cabeza corriendo. Baja su salud -20 y su energía -10."
+    },
+    {
+        "nombre": "palmada en la espalda",
+        "efecto": {
+            "salud": -20,
+            "energia": -5
+        },
+        "mensaje": "Le diste una palmada en la espalda a tu mascota. Esa frialdad le destruye el corazón a tu mascota. Baja su salud -20 y su energía -5."
+    },
+    {
+        "nombre": "beso",
+        "efecto": {
+            "salud": 40,
+            "energia": 0
+        },
+        "mensaje": "Le diste un beso a tu mascota. Tu mascota es muy feliz. Su salud aumenta +40"
+    },
+    {
+        "nombre": "jugar",
+        "efecto": {
+            "salud": 80,
+            "energia": -20
+        },
+        "mensaje": "Jugaste con tu mascota. Tu mascota es muy feliz pero gastó mucha energía. Su salud aumenta +80 y su enegía baja -20"
+    }
+]

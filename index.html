@@ -36,21 +36,38 @@
                     <p id="infoSalud">Salud = 80</p>
                     <p id="infoEnergia">Energía = 80</p>
                     <p id="infoEdad">Días de vida = 1 </p>
-
+                    <div class="div_dinero"><img src="./img/moneda.png" alt="dinero" class="dinero"><p id="infoDinero">$1</p>
+                    </div>         
                 </div>
             </section>
             <section class="section_centro">
-                    <div class="img">
-                        <img src="./img/gato-dia.png" alt="mascota" id="img_mascota" />
+                <div class="izq">
+                    <div id="mascotas">
+                        <div class="carrito">
+                            <img src="./img/carrito.png" alt="carrito" class="carrito" onclick="comprar()">
+                        </div>
+                        <div class="img">
+                            <img src="./img/gato-dia.png" alt="mascota" id="img_mascota" />
+                        </div>
                     </div>
+                    <div id="seleccionMascota" >
+                        <h2>Comprá otros estilos:</h2>
+                        <div class="opciones-comprar">
+                            <div class="opcion-comprar" onclick="seleccionarMascota('./img/conejodia.png')"><img src="./img/conejodia.png" alt="conejodia" class="mascotas-img"><div class="div-p"><p>$7</p></div></div>
+                            <div class="opcion-comprar" onclick="seleccionarMascota('./img/perrodia.png')"><img src="./img/perrodia.png" alt="perrodia" class="mascotas-img"><div class="div-p"><p>$15</p></div></div>
+                            <div class="opcion-comprar" onclick="seleccionarMascota('./img/ratadia.png')"><img src="./img/ratadia.png" alt="ratadia" class="mascotas-img"><div class="div-p"><p>$30</p></div></div>
+                            <button onclick="volverAtras()" class="boton-atras">Atrás</button>
+                        </div>
+                    </div>
+                </div>
                         <div class="card">
                             <p class="mensaje_consol" id="mensajeConsol">🐾Ponle un nombre a tu mascota🐾</p>
                             </div>
                     <div class="comidas">
                         <h2>Comidas</h2>
                         <p class= "opciones" onclick="darComida('zanahoria')">Zanahoria</p>
-                        <p class= "opciones" onclick="darComida('hamburguesa')">Hamburguesa</p>
-                        <p class= "opciones" onclick="darComida('pepino')">Pepino</p>
+                        <p class= "opciones" onclick="darComida('croquetas')">Croquetas</p>
+                        <p class= "opciones" onclick="darComida('pollito')">Pollito</p>
                         <p class= "opciones" onclick="darComida('sandia con vino')">Sandía con vino</p>
                         <p class= "opciones" onclick="darComida('helado')">Helado</p>
                     </div>

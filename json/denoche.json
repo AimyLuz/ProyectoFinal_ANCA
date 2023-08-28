@@ -1,0 +1,82 @@
+[
+    {
+        "nombre": "sueño",
+        "mensaje": "Durante la noche tu mascota soñó que el perro del vecino le pinchaba su pelota favorita. Se puso muy triste y se levantó asustado. Perdió -25 de salud y de energía.",
+        "efecto": {
+            "salud": -25,
+            "energia": -25
+        }
+    },
+    {
+        "nombre": "techo",
+        "mensaje": "Durante la noche, mientras tu mascota dormía, se inundó el departamento del vecino de arriba y el techo de tu casa se cayó sobre tu mascota, que se asustó y se lastimó un poco. Perdió -40 de salud y de energía",
+        "efecto": {
+            "salud": -40,
+            "energia": -40
+        }
+    },
+    {
+        "nombre": "ovnis",
+        "mensaje": "Durante la noche vinieron ovnis que abdujeron a tu mascota. Le hicieron estudios completos y, cuando se puso a morder los botones de la nave, trajeron a tu mascota devuelta a casa. Perdió -30 de salud y de energía",
+        "efecto": {
+            "salud": -30,
+            "energia": -30
+        }
+    },
+    {
+        "nombre": "fiebre",
+        "mensaje": "Durante la noche a tu mascota le subió la fiebre. Por suerte ya está mejor pero gastó mucha energía y salud. Perdió -50 de salud y de energía",
+        "efecto": {
+            "salud": -50,
+            "energia": -50
+        }
+    },
+    {
+        "nombre": "insomnio",
+        "mensaje": "Durante la noche tu mascota no pudo dormir por tener insomnio. Su energía disminuyó -30.",
+        "efecto": {
+            "salud": 0,
+            "energia": -30
+        }
+    },
+    {
+        "nombre": "bien",
+        "mensaje": "Durante la noche tu mascota durnmió plácidamente. Recuperando +40 de salud y de energía.",
+        "efecto": {
+            "salud": 40,
+            "energia": 40
+        }
+    },
+    {
+        "nombre": "fiesta",
+        "mensaje": "Durante la noche tu mascota no pudo dormir casi nada porque los vecinos hicieron una fiesta hasta la madrugrada. Perdió -35 de energía.",
+        "efecto": {
+            "salud": 0,
+            "energia": -35
+        }
+    },
+    {
+        "nombre": "sillón",
+        "mensaje": "Durante la noche tu mascota mordió el sillón y lo rompió. Te enojaste y le ordenaste ir a dormir afuera. Tu mascota se puso triste. Perdió -30 de salud y de energía",
+        "efecto": {
+            "salud": -30,
+            "energia": -30
+        }
+    },
+    {
+        "nombre": "sueño lindo",
+        "mensaje": "Durante la noche tu mascota tuvo un hermoso sueño donde comía croquetas. ¡Recuperó +30 de salud y de energía!.",
+        "efecto": {
+            "salud": 30,
+            "energia": 30
+        }
+    },
+    {
+        "nombre": "ratón",
+        "mensaje": "Durante la noche tu mascota comenzó a perseguir un ratón. En su desenfreno no vió los muebles y se llevó puesta una silla. Perdió -40 de salud y de energía",
+        "efecto": {
+            "salud": -40,
+            "energia": -40
+        }
+    }
+]

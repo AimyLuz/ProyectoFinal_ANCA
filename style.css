@@ -19,23 +19,20 @@ h1 {
     margin: 0;
 }
 
-.img {
-    margin: 5px;
-    padding: 0;
-    display: flex;
-    align-items:flex-end;
-    justify-content: center;
-   
-}
-#img_mascota {
-    width: 200px;
-    margin: 0 10px 0 10px;
-}
 p{
     font-size: 2rem;
 }
-
-
+.div_dinero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dinero {
+    width: 50px;
+}
+.div_dinero p {
+    margin: 0;
+}
 .opciones {
     font-size: 2rem;
     font-weight: 400;
@@ -60,10 +57,76 @@ p{
     gap: 10px 5px; 
     grid-template-areas: 
       "card card comidas amor"
-      "img img comidas amor"
-      "img img dormir dormir"; 
+      "izq izq comidas amor"
+      "izq izq dormir dormir"; 
   }
-  .img { grid-area: img; }
+  .izq { 
+    grid-area: izq; 
+    margin: 5px;
+    padding: 0;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+#mascotas  {
+     margin: 5px;
+    padding: 0;
+    display: flex;
+    align-items:flex-end;
+
+}
+#img_mascota {
+    display: flex; 
+    width: 200px;
+    margin-left: 200px;
+    justify-content: center;
+}
+#seleccionMascota {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none; 
+}
+.opciones-mascotas {
+    display: flex;
+    margin-left: 50px;
+}
+.mascotas-img {
+    width: 200px;
+    
+}
+.div-p {
+    width: 60px;
+    height: 60px;
+    background-color: darkgoldenrod;
+    border-radius: 50%;
+    margin-left: 70px;
+}
+.carrito {
+    width: 100px;
+}
+.div-p p {
+    padding: 5px;
+    margin: 2px;
+}
+.boton-atras {
+    background-color: #4CAF50; /* Green */
+    border-radius: 50px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+}
+    .boton-atras:hover {
+        background-color: #ffffff; /* Green */
+        color: #4CAF50;
+    }
+
   .card { 
     grid-area: card; 
     width: 90%;

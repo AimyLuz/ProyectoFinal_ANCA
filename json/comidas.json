@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "zanahoria",
+        "efecto": {
+            "salud": 10,
+            "energia": 30
+        },
+        "mensaje": "Le diste zanahoria. ¡Buena elección! La energía aumenta +30 y, como la zanahoria es muy sana, su salud aumenta +10."
+    },
+    {
+        "nombre": "croquetas",
+        "efecto": {
+            "salud": 0,
+            "energia": 40
+        },
+        "mensaje": "Le diste croquetas. La comida ideal para las mascotas. Su energía aumenta +40"
+    },
+    {
+        "nombre": "sandia con vino",
+        "efecto": {
+            "salud": -100,
+            "energia": -100
+        },
+        "mensaje": "Le diste sandía con vino. ¡¿¿¿Qué estás mal de la cabeza???! ¡SOS UN ASESINO! ¡ESTOY LLAMANDO A LA POLICÍA!"
+    },
+    {
+        "nombre": "pollito",
+        "efecto": {
+            "salud": 0,
+            "energia": 50
+        },
+        "mensaje": "Le diste pollito. A tu mascota le encanta, la energía auimenta +50"
+    },
+    {
+        "nombre": "helado",
+        "efecto": {
+            "salud": -30,
+            "energia": 40
+        },
+        "mensaje": "Le diste helado. ¡Qué rico! Pero las mascotas no pueden comer eso, por lo que le da diabetes de mascotas. La energía aumenta +40 pero la salud se reduce -30"
+    }
+]
