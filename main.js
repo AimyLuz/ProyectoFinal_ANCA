@@ -98,7 +98,7 @@ function nombrarMascota() {
     }
 }
 /******************************************************************/
-/*  FUNCIONES MASCOTA                                               */
+/*         INCREMENTAR DIAS DE VIDA                                     */
 /******************************************************************/
 //CRECE LA MASCOTA SEGUN LOS DIAS DE VIDA
 function ajustarAnchoImagen() {
@@ -512,7 +512,7 @@ function darComida(opcionComida) {
             } else {
                 Swal.fire(
                     "Respuesta incorrecta",
-                    `La respusta correcta era: ${preguntas[azar].respuesta}`,
+                    `La respuesta correcta era: ${preguntas[azar].respuesta}`,
                     "error"
                 );
             }
@@ -573,7 +573,7 @@ function darAmor(opcionAmor) {
             } else {
                 Swal.fire(
                     "Respuesta incorrecta",
-                    `La respusta correcta era: ${preguntas[azar].respuesta}`,
+                    `La respuesta correcta era: ${preguntas[azar].respuesta}`,
                     "error"
                 );
             }
