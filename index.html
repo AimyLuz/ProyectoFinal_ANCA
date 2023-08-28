@@ -7,7 +7,7 @@
     <title>Mi mascota virtual</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./img/very-cute-ball-virtual-pet.jpg" />
 </head>
@@ -36,8 +36,9 @@
                     <p id="infoSalud">Salud = 80</p>
                     <p id="infoEnergia">Energía = 80</p>
                     <p id="infoEdad">Días de vida = 1 </p>
-                    <div class="div_dinero"><img src="./img/moneda.png" alt="dinero" class="dinero"><p id="infoDinero">$1</p>
-                    </div>         
+                    <div class="div_dinero"><img src="./img/moneda.png" alt="dinero" class="dinero">
+                        <p id="infoDinero">$1</p>
+                    </div>
                 </div>
             </section>
             <section class="section_centro">
@@ -50,42 +51,60 @@
                             <img src="./img/gato-dia.png" alt="mascota" id="img_mascota" />
                         </div>
                     </div>
-                    <div id="seccionComprar" >
+                    <div id="seccionComprar">
                         <h2>Tienda</h2>
                         <div class="opcionesComprar">
-                            <div class="opcionComprar" onclick="recargarSalud()"><p class="titulo_opciones_comprar">Salud al máximo</p><img src="./img/salud.png" alt="corzaones" class="comprar-img"><div class="div-p"><p>$10</p></div></div>
-                            <div class="opcionComprar" onclick="recargarEnergia()"><p class="titulo_opciones_comprar">Energía al máximo</p><img src="./img/energia.png" alt="rayo" class="comprar-img"><div class="div-p"><p>$10</p></div></div>
-                            <div class="opcionComprar" onclick="contarUnChiste()"><p class="titulo_opciones_comprar">Chistes</p><img src="./img/chistes.png" alt="chistes" class="comprar-img"><div class="div-p"><p>$5</p></div></div>
+                            <div class="opcionComprar" onclick="recargarSalud()">
+                                <p class="titulo_opciones_comprar">Salud al máximo</p><img src="./img/salud.png"
+                                    alt="corzaones" class="comprar-img">
+                                <div class="div-p">
+                                    <p>$10</p>
+                                </div>
+                            </div>
+                            <div class="opcionComprar" onclick="recargarEnergia()">
+                                <p class="titulo_opciones_comprar">Energía al máximo</p><img src="./img/energia.png"
+                                    alt="rayo" class="comprar-img">
+                                <div class="div-p">
+                                    <p>$10</p>
+                                </div>
+                            </div>
+                            <div class="opcionComprar" onclick="contarUnChiste()">
+                                <p class="titulo_opciones_comprar">Chistes</p><img src="./img/chistes.png" alt="chistes"
+                                    class="comprar-img">
+                                <div class="div-p">
+                                    <p>$5</p>
+                                </div>
+                            </div>
                             <button onclick="volverAtras()" class="boton-atras">Atrás</button>
                         </div>
                     </div>
                 </div>
-                        <div class="card">
-                            <p class="mensaje_consol" id="mensajeConsol">🐾Ponle un nombre a tu mascota🐾</p>
-                            </div>
-                    <div class="comidas">
-                        <h2>Comidas</h2>
-                        <p class= "opciones" onclick="darComida('zanahoria')">Zanahoria</p>
-                        <p class= "opciones" onclick="darComida('croquetas')">Croquetas</p>
-                        <p class= "opciones" onclick="darComida('pollito')">Pollito</p>
-                        <p class= "opciones" onclick="darComida('sandia con vino')">Sandía con vino</p>
-                        <p class= "opciones" onclick="darComida('helado')">Helado</p>
-                    </div>
-                    <div class="amor">
-                        <h2>Formas de dar amor</h2>
-                        <p class= "opciones" onclick="darAmor('abrazo')">Abrazo</p>
-                        <p class= "opciones" onclick="darAmor('leerle un cuento')">Leerle un cuento</p>
-                        <p class= "opciones" onclick="darAmor('palmada en la espalda')">Palmada en la espalda</p>
-                        <p class= "opciones" onclick="darAmor('beso')">Beso</p>
-                        <p class= "opciones" onclick="darAmor('jugar')">Jugar</p>
-                        </div>
-                    </div>
-            </div>
+                <div class="card">
+                    <p class="mensaje_consol" id="mensajeConsol">🐾Ponle un nombre a tu mascota🐾</p>
+                </div>
+                <div class="comidas">
+                    <h2>Comidas</h2>
+                    <p class="opciones" onclick="darComida('zanahoria')">Zanahoria</p>
+                    <p class="opciones" onclick="darComida('croquetas')">Croquetas</p>
+                    <p class="opciones" onclick="darComida('pollito')">Pollito</p>
+                    <p class="opciones" onclick="darComida('sandia con vino')">Sandía con vino</p>
+                    <p class="opciones" onclick="darComida('helado')">Helado</p>
+                </div>
+                <div class="amor">
+                    <h2>Formas de dar amor</h2>
+                    <p class="opciones" onclick="darAmor('abrazo')">Abrazo</p>
+                    <p class="opciones" onclick="darAmor('leerle un cuento')">Leerle un cuento</p>
+                    <p class="opciones" onclick="darAmor('palmada en la espalda')">Palmada en la espalda</p>
+                    <p class="opciones" onclick="darAmor('beso')">Beso</p>
+                    <p class="opciones" onclick="darAmor('jugar')">Jugar</p>
+                </div>
+                </div>
+                </div>
                 <div class="dormir">
                     <div>
                         <p class="dormir_boton" onclick="dormir()"> Dormir</p>
                     </div>
-        </section>
+            </section>
 
 
     </main>

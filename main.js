@@ -368,7 +368,7 @@ function contarUnChiste() {
             }
         }).then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
-            
+
             }
         })
 
