@@ -1,4 +1,7 @@
-//Variables let a utilizar mas adelante
+/******************************************************************/
+/*  Variables                                                      */
+/******************************************************************/
+
 let comer;
 let noche = false;
 let sonido;
@@ -6,8 +9,8 @@ let preguntas = []; //JSON
 let comidas = []; //JSON
 let formasDeAmor = []; //JSON
 let deNoche = []; //JSON
+let chistes = []; //JSON
 
-//Constantes
 // Objeto Mascota
 const miMascota = {
     nombre: "",
@@ -27,14 +30,11 @@ const elementosDeTexto = document.querySelectorAll(
 const opcionesFondo = document.querySelectorAll(".opciones");
 const fondosRosas = document.querySelectorAll(".boton, .card");
 
-//ARRAYS QUE NO PASE A JSON PORQ EL EFECTO COMO UTILIZA "+" NO ME PERMITE IMPLEMENTARLO 
-    // Array de comidas
-
-    // Array de formas de dar amor
-
-    //Array de posibilidades para cada día
 
 
+/******************************************************************/
+/*                 INICIO DEL JUEGO                               */
+/******************************************************************/
 //inicio del Juego, recarga partida anterior o empieza una nueva
 function cargarPartida() {
     Swal.fire({
@@ -97,7 +97,9 @@ function nombrarMascota() {
         guardarProgreso();
     }
 }
-//FUNCIONES DE JUGABILIDAD
+/******************************************************************/
+/*  FUNCIONES MASCOTA                                               */
+/******************************************************************/
 //CRECE LA MASCOTA SEGUN LOS DIAS DE VIDA
 function ajustarAnchoImagen() {
     const anchoAdicional = miMascota.edad * 25; // Cada año + 25px
@@ -135,9 +137,11 @@ function incrementarDiaVida() {
     }
 }
 
-// SET INTERVAL CADA 50 SEGUNDOS 1 DÍA MAS DE VIDA
-setInterval(incrementarDiaVida, 50000); // 50 seg
-
+// SET INTERVAL CADA 40 SEGUNDOS 1 DÍA MAS DE VIDA
+setInterval(incrementarDiaVida, 40000); // 40 seg
+/******************************************************************/
+/*              MODO NOCTURNO                                     */
+/******************************************************************/
 //INTENTO DE MODO NOCTURNO SIN AYUDA, PERO FUNCIONÓ
 function cambiarDiaNoche() {
     if (noche === false) {
@@ -168,13 +172,18 @@ function cambiarDiaNoche() {
         document.body.style.backgroundColor = "darkslateblue";
     }
 }
-// CAMBIAR TEXTO EN CARD ROSA , NARRACIÓN DEL JUEGO
+/******************************************************************/
+/*                            NARRACION JUEGO CARD ROSA           */
+/******************************************************************/
+
 function cambiarTextoCard(mensaje) {
     const mensajeConsol = document.getElementById("mensajeConsol");
     mensajeConsol.innerHTML = mensaje;
 }
+/******************************************************************/
+/* CAMBIOS EN LOS ICONOS DE LA PANTALLA DE SALUD, ENERGÍA, DINERO Y DÍAS DE VIDA */
+/******************************************************************/
 
-// CAMBIOS EN LOS ICONOS DE LA PANTALLA DE SALUD, ENERGÍA Y DÍAS DE VIDA
 function actualizarInfoEnPantalla() {
     const infoSalud = document.getElementById("infoSalud");
     const infoEnergia = document.getElementById("infoEnergia");
@@ -192,28 +201,182 @@ function maxMin() {
     miMascota.salud = Math.max(miMascota.salud, 0);
     miMascota.energia = Math.max(miMascota.energia, 0);
 }
+/*******************************************************************/
+/*****************    GANAR DINERO          ************************/
+/*******************************************************************/
 function incrementarDinero() {
-    const cantidadGanada = 3; 
+    const cantidadGanada = 5;
     miMascota.dinero += cantidadGanada;
 
 }
 /****************************************************************************/
-/*                             COMPRAR ESTILOS                              */
+/*                             COMPRAR                              */
 /****************************************************************************/
-// function comprar () {
-//     const mascotasDiv = document.getElementById("mascotas");
-//     const seleccionMascotaDiv = document.getElementById("seleccionMascota");
-//     mascotasDiv.style.display = "none";
-//     seleccionMascotaDiv.style.display = "block";
-// }
-// function volverAtras() {
-//     const mascotasDiv = document.getElementById("mascotas");
-//     const seleccionMascotaDiv = document.getElementById("seleccionMascota");
-//     mascotasDiv.style.display = "block";
-//     seleccionMascotaDiv.style.display = "none";
-// }
+function comprar() {
+    const mascotasDiv = document.getElementById("mascotas");
+    const seleccionMascotaDiv = document.getElementById("seccionComprar");
+    mascotasDiv.style.display = "none";
+    seleccionMascotaDiv.style.display = "block";
+}
+function volverAtras() {
+    const mascotasDiv = document.getElementById("mascotas");
+    const seleccionMascotaDiv = document.getElementById("seccionComprar");
+    mascotasDiv.style.display = "block";
+    seleccionMascotaDiv.style.display = "none";
+}
 
-// FUNCIONES ASINCRONICAS 
+/******************************************************************/
+/*******************SALUD AL MAXIMO ***********************/
+/******************************************************************/
+function recargarSalud() {
+    if (miMascota.dinero >= 10) {
+        sonido = new Audio("./audios/monedas.mp3");
+        sonido.play();
+        miMascota.salud += 100;
+        maxMin();
+        Toastify({
+            text: "Compra exitosa",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+        }).showToast();
+        miMascota.dinero -= 10;
+        actualizarInfoEnPantalla();
+    } else {
+        sonido = new Audio("./audios/error.mp3");
+        sonido.play();
+        let timerInterval
+        Swal.fire({
+            icon: 'error',
+            title: 'Dinero insuficiente',
+            html: 'andá a laburá',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+            }
+        })
+
+    }
+}
+
+/******************************************************************/
+/********************    ENERGIA AL MAXIMO  ***********************/
+/******************************************************************/
+function recargarEnergia() {
+    if (miMascota.dinero >= 10) {
+        sonido = new Audio("./audios/monedas.mp3");
+        sonido.play();
+        miMascota.energia += 100;
+        maxMin();
+        Toastify({
+            text: "Compra exitosa",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+        }).showToast();
+        miMascota.dinero -= 10;
+        actualizarInfoEnPantalla();
+    } else {
+        sonido = new Audio("./audios/error.mp3");
+        sonido.play();
+        let timerInterval
+        Swal.fire({
+            icon: 'error',
+            title: 'Dinero insuficiente',
+            html: 'andá a laburá',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+            }
+        })
+
+    }
+}
+
+
+/******************************************************************/
+/********************  COMPRAR UN CHISTE *************************/
+/******************************************************************/
+function contarUnChiste() {
+    if (miMascota.dinero >= 5) {
+        const azar = Math.floor(Math.random() * chistes.length);
+        Swal.fire({
+            title: `${chistes[azar].chiste}`,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+        Toastify({
+            text: "Compra exitosa",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+        }).showToast();
+        maxMin();
+        miMascota.dinero -= 5;
+        actualizarInfoEnPantalla();
+        sonido = new Audio("./audios/chistesonido.mp3");
+        sonido.play();
+    } else {
+        sonido = new Audio("./audios/error.mp3");
+        sonido.play();
+        let timerInterval
+        Swal.fire({
+            icon: 'error',
+            title: 'Dinero insuficiente',
+            html: 'andá a laburá',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+            
+            }
+        })
+
+    }
+}
+/****************************************************************************/
+/*                     FUNCIONES ASINCRONICAS                               */
+/****************************************************************************/
 //cargar preguntas 
 async function cargarPreguntasDesdeJSON() {
     try {
@@ -243,6 +406,8 @@ async function cargarComidasDesdeJSON() {
 cargarComidasDesdeJSON().then((data) => {
     comidas = data;
 });
+
+
 //cargar formasDeAmor
 async function cargarFormasDeAmorDesdeJSON() {
     try {
@@ -257,6 +422,7 @@ async function cargarFormasDeAmorDesdeJSON() {
 cargarFormasDeAmorDesdeJSON().then((data) => {
     formasDeAmor = data;
 });
+
 //cargar deNoche 
 async function cargarDeNocheDesdeJSON() {
     try {
@@ -268,10 +434,32 @@ async function cargarDeNocheDesdeJSON() {
         return [];
     }
 }
-cargarFormasDeAmorDesdeJSON().then((data) => {
+cargarDeNocheDesdeJSON().then((data) => {
     deNoche = data;
 });
-//DAR COMIDA A LA MASCOTA
+
+//CARGAR CHISTES
+async function cargarChistesDesdeJSON() {
+    try {
+        const response = await fetch("./json/chistes.json");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error al cargar los chistes:", error);
+        return [];
+    }
+}
+cargarChistesDesdeJSON().then((data) => {
+    chistes = data;
+});
+
+
+/****************************************************************************/
+/*                           ALIMENTAR, DAR AMOR Y DORMIR                      */
+/****************************************************************************/
+
+//ALIMENTAR MASCOTA
+
 function darComida(opcionComida) {
     const azar = Math.floor(Math.random() * preguntas.length);
     Swal.fire({
@@ -331,6 +519,7 @@ function darComida(opcionComida) {
         }
     });
 }
+
 //DAR AMOR A LA MASCOTA
 function darAmor(opcionAmor) {
     const azar = Math.floor(Math.random() * preguntas.length);
@@ -391,6 +580,7 @@ function darAmor(opcionAmor) {
         }
     });
 }
+//DORMIR A LA MASCOTA 
 function dormir() {
     const azar = Math.floor(Math.random() * deNoche.length);
     miMascota.salud += deNoche[azar].efecto.salud;

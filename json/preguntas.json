@@ -89,7 +89,7 @@
     },
     {
         "pregunta": "¿Qué famosa conductora argentina es conocida como 'La chiqui'?",
-        "respuesta": "Mirtha Legrand"
+        "respuesta": "mirtha legrand"
     },
     {
         "pregunta": "¿Cuál es el baile tradicional de Argentina?",
@@ -104,7 +104,7 @@
         "respuesta": "cuchillo de palo"
     },
     {
-        "pregunta": "¿Cómo se llama el famoso estadio de fútbol ubicado en Buenos Aires?",
+        "pregunta": "¿Cómo se llama el famoso estadio de fútbol donde juega boquita?",
         "respuesta": "bombonera"
     },
     {
@@ -158,5 +158,9 @@
     {
         "pregunta": "Si el día tiene 24 horas y ahora son las 3 de la tarde, ¿cuántas horas faltan para la medianoche?",
         "respuesta": "9"
+    },
+    {
+        "pregunta": "¿Quién diseño la bandera argentina?",
+        "respuesta": "manuel belgrano"
     }
 ]

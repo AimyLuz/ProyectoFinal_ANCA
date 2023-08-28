@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap');
 
+
+/******************************************************************/
+/*                  GENERALES                                     */
+/******************************************************************/
+
 body {
     background-image: url('./img/fondo-dia2.jpg');
     background-repeat: no-repeat;
@@ -8,6 +13,13 @@ body {
     font-family: "Caveat";
 }
 
+p {
+    font-size: 2rem;
+}
+
+/******************************************************************/
+/*              HEADER                                            */
+/******************************************************************/
 header {
     display: flex;
     justify-content: center;
@@ -19,82 +31,160 @@ h1 {
     margin: 0;
 }
 
-p{
+
+/******************************************************************/
+/*              SECCION ARRIBA NOMBRE MASCOTA                             */
+/******************************************************************/
+
+.section_nombre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.input_nombre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.input_nombre input {
+    flex: 1;
+    height: 80PX;
     font-size: 2rem;
 }
+
+.boton {
+    font-size: 1.5rem;
+    background-color: rgb(229, 127, 255);
+    height: 50px;
+    width: 100px;
+    border: solid, black, 5px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.boton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+/******************************************************************/
+/*              INFORMACION MASCOTA                               */
+/******************************************************************/
+
 .div_dinero {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .dinero {
     width: 50px;
 }
+
 .div_dinero p {
     margin: 0;
 }
-.opciones {
-    font-size: 2rem;
-    font-weight: 400;
-    background-color: aquamarine;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-}
-.opciones:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
+
 .info {
     display: flex;
-    justify-content:space-around;
-    
+    justify-content: space-around;
+
 }
+/******************************************************************/
+/*             SECTION CENTRO                                       */
+/******************************************************************/
+
 .section_centro {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 0.6fr 0.6fr; 
-    grid-template-rows: 1fr 1fr 1.4fr; 
-    gap: 10px 5px; 
-    grid-template-areas: 
-      "card card comidas amor"
-      "izq izq comidas amor"
-      "izq izq dormir dormir"; 
-  }
-  .izq { 
-    grid-area: izq; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.6fr 0.6fr;
+    grid-template-rows: 1fr 1fr 1.4fr;
+    gap: 10px 5px;
+    grid-template-areas:
+        "card card comidas amor"
+        "izq izq comidas amor"
+        "izq izq dormir dormir";
+}
+.card {
+    grid-area: card;
+    width: 90%;
+    height: 100%;
+    background-color: rgb(229, 127, 255);
+    color: black;
+    font-size: 1.5rem;
+    padding: 0 20px 0 5px;
+}
+
+.izq {
+    grid-area: izq;
     margin: 5px;
     padding: 0;
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
     justify-content: space-between;
 }
-#mascotas  {
-     margin: 5px;
+.comidas {
+    grid-area: comidas;
+}
+
+.amor {
+    grid-area: amor;
+    margin: 0 10px 0 10px;
+}
+
+.dormir {
+    grid-area: dormir;
+}
+
+
+/******************************************************************/
+/*             izquierda mascota                                 */
+/******************************************************************/
+
+
+#mascotas {
+    margin: 5px;
     padding: 0;
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
 
 }
+
 #img_mascota {
-    display: flex; 
+    display: flex;
     width: 200px;
     margin-left: 200px;
-    justify-content: center;
+
 }
-#seleccionMascota {
+.carrito {
+    width: 100px;
+
+}
+/******************************************************************/
+/*            IZQUIERDA COMPRAR                                   */
+/******************************************************************/
+
+#seccionComprar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: none; 
+    display: none;
 }
-.opciones-mascotas {
+
+.opcionesComprar {
     display: flex;
     margin-left: 50px;
 }
-.mascotas-img {
+
+.comprar-img {
     width: 200px;
-    
+
 }
+
 .div-p {
     width: 60px;
     height: 60px;
@@ -102,15 +192,17 @@ p{
     border-radius: 50%;
     margin-left: 70px;
 }
-.carrito {
-    width: 100px;
-}
+
 .div-p p {
     padding: 5px;
     margin: 2px;
 }
+.titulo_opciones_comprar{
+    margin: 10px;
+    padding: 5px;
+}
 .boton-atras {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border-radius: 50px;
     color: white;
     padding: 16px 32px;
@@ -122,86 +214,56 @@ p{
     height: 100px;
     width: 200px;
 }
-    .boton-atras:hover {
-        background-color: #ffffff; /* Green */
-        color: #4CAF50;
-    }
 
-  .card { 
-    grid-area: card; 
-    width: 90%;
-    height: 100%;
-    background-color: rgb(229, 127, 255);
-    color: black;
-    font-size: 1.5rem;
-    padding: 0 20px 0 5px;
+.boton-atras:hover {
+    background-color: #ffffff;
+    color: #4CAF50;
 }
-  .comidas { 
-    grid-area: comidas; 
+
+/******************************************************************/
+/*            SECCION OPCIONES DE AMOR , COMIDA  Y DORMIR                                     */
+/******************************************************************/
+
+.opciones {
+    font-size: 2rem;
+    font-weight: 400;
+    background-color: aquamarine;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
 }
-  .amor { grid-area: amor; 
-    margin: 0 10px 0 10px;}
-  .dormir { grid-area: dormir; }
+
+.opciones:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 h2 {
     display: flex;
     justify-content: center;
     font-size: 2rem;
     font-weight: 700;
 }
+
 .mensaje_consol {
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: center;
     font-family: 'Fira Sans', sans-serif;
-    font-style: italic; 
+    font-style: italic;
     font-size: 1.8rem;
 }
-.section2 {
-    display: flex;
-    justify-content: center;
-}
 
 
-.section_nombre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-}
-.input_nombre {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-.input_nombre input {
-    flex: 1;
-    height: 80PX;
-    font-size: 2rem;
-}
-.boton {
-    font-size: 1.5rem;
-    background-color: rgb(229, 127, 255);
-    height: 50px;
-    width: 100px;
-    border: solid, black, 5px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
 
-.boton:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
 .dormir_boton {
     display: flex;
     height: 100px;
     width: 400px;
     font-size: 2rem;
-    background-color:mediumpurple;
+    background-color: mediumpurple;
     color: azure;
     border: solid, black, 5px;
     border-radius: 20px;
@@ -210,67 +272,139 @@ h2 {
     align-items: center;
     margin-top: 30px;
 }
+
 .dormir_boton:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
         0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+/******************************************************************/
+/*              FOOTER                              */
+/******************************************************************/
 
 footer {
     display: flex;
     justify-content: space-between;
     align-items: end;
 }
+
 footer div p {
     font-size: 1.4rem;
 }
+/******************************************************************/
+/*             MEDIA QUERYS                                 */
+/******************************************************************/
 
 @media screen and (max-width: 769px) {
-.section_centro {
-    grid-template-columns: 1fr; 
-    grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "img"
-      "card"
-      "comidas"
-      "amor"
-      "dormir"; 
-}
-.card { 
-    grid-area: card; 
-    padding:  0 10px 10px 10px;
-    margin: 0 10px 10px 10px;
-}
+    .section_centro {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "izq"
+            "card"
+            "comidas"
+            "amor"
+            "dormir";
+    }
+    .izq {
+        grid-area: izq;
+    }
+    .card {
+        grid-area: card;
+        padding: 0 10px 10px 10px;
+        margin: 0 10px 10px 10px;
+    }
 
-.comidas { 
-    grid-area: comidas; 
-    margin: 10px;
-}
-  .amor { grid-area: amor; 
-    margin: 10px;
+    .comidas {
+        grid-area: comidas;
+        margin: 10px;
+    }
+
+    .amor {
+        grid-area: amor;
+        margin: 10px;
+
+    }
+
+    .info {
+        flex-direction: column;
+        font-weight: 700;
+
+
+    }
+
+    .input_nombre {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    body {
+
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-color: #7DB645;
+
+    }
     
-}
-
-.info {
-    flex-direction: column;
-    font-weight: 700;
-
+    #img_mascota {
+        display: flex;
+        width: 200px;
+        margin-left: 0px;
     
-}
-.input_nombre {
+    }
+    .carrito {
+        width: 50px;
+    
+    }
+    
+.opcionesComprar {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    padding: 20px;
-    width: 100%;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
 }
-body {
-    
-    background-repeat: no-repeat;
-    background-size:auto;
-    background-color: #7DB645;
 
+.comprar-img {
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.div-p {
+    width: 60px;
+    height: 60px;
+    background-color: darkgoldenrod;
+    border-radius: 50%;
+    margin-left: 70px;
+}
+
+.div-p p {
+    padding: 5px;
+    margin: 2px;
+}
+
+.boton-atras {
+    background-color: #4CAF50;
+    border-radius: 50px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+}
+.div_dinero {
+    display: flex;
+    align-items:normal;
+    justify-content:flex-start;
 }
 
 }
