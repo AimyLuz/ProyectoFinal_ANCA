@@ -195,10 +195,11 @@ h1 {
 
 }
 
+
 .div-p {
     width: 60px;
     height: 60px;
-    background-color: darkgoldenrod;
+    background-color: rgb(245, 233, 72);
     border-radius: 50%;
     margin-left: 70px;
 }
