@@ -390,9 +390,11 @@ footer div p {
         margin-left: 0px;
 
     }
-
+    .dormir_boton {
+        width: 300px;
+    }
     .carrito {
-        width: 50px;
+        width: 150px;
 
     }
 
