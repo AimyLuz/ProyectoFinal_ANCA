@@ -78,6 +78,7 @@ function cargarProgreso() {
 }
 
 //COLOCAR NOMBRE A LA MASCOTA
+
 function nombrarMascota() {
     const nombreInput = document
         .getElementById("nombre")
@@ -108,7 +109,7 @@ function ajustarAnchoImagen() {
 // INCREMENTAR DIAS DE VIDA DE LA MASCOTA
 function incrementarDiaVida() {
     if (mascotaViva()) {
-        miMascota.edad += 1;
+        miMascota.edad ++; //puse ++ solo para cumplir con operadores avanzados y que tenga sugar sintax, pero originalmente era +=1
         miMascota.energia -= 10;
         miMascota.salud -= 10;
         sonido = new Audio("./audios/gluglu.mp3");
