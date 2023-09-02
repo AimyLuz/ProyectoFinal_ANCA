@@ -72,6 +72,7 @@ function cargarProgreso() {
         miMascota.energia = progresoParseado.energia;
         miMascota.edad = progresoParseado.edad;
         actualizarInfoEnPantalla();
+        ajustarAnchoImagen();
         document.getElementById("respuestaNombre").textContent = miMascota.nombre;
         cambiarTextoCard("¡Te extrañé!");
     }
